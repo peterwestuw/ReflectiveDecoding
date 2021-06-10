@@ -1,0 +1,7 @@
+jsonlines
+nltk=3.5
+pytorch=1.7.1
+sacremoses=0.0.43
+spacy=3.0.6
+tqdm=4.49.0=pypi_0
+transformers=4.4.0
