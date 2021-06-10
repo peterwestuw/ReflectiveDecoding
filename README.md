@@ -1,7 +1,5 @@
 # ReflectiveDecoding
 
-This is the repo contains the code for:
-
 This is the official repo for the paper ["Reflective Decoding: Beyond Unidirectional Generation with Off-the-Shelf Language Models"](https://homes.cs.washington.edu/~pawest/ReflectiveDecoding.html) (ACL 2021)
 
 Reflective Decoding is a method with direct applications in paraphrasing and text infilling. 
