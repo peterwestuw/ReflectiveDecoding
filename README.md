@@ -12,7 +12,7 @@ We include scripts for generating in both of these applications. Reflective Deco
 
 Reflective Decoding using forward and backward GPT-2 XL language models, which we train for this work. You can download out pretrained model weights [here](https://github.com/peterwestuw/GPT2ForwardBackward). If you have your own forward/backward LMs you would like to use, you may need to make minimal changes to the code e.g. which model architecture is used--ours differs very slightly from the original GPT-2 but you should be able to substitute in any huggingface model. 
 
-Once you download these models, extract them into the `models/` directory, and point the appropriate model path parameters in `generation_configs.py`
+Once you download these models, extract them into the `models/` directory, and point the appropriate model path parameters in `generation_configs.py`. Note that we use 2 GPUs with one model on each. This will depend on what system you are using and can be changed with the `model_device` parameters in `generation_configs.py`.
 
 ## Data
 
@@ -40,8 +40,9 @@ pip install -r requirements.txt
 
 Once this is done, you should be ready to generate!
 
-## Generating on our data
+## Generating
 
+Note that generation may take 10s of seconds per example. Depending on your system, you can speed this up by setting larger batch sized in `generation_configs.py` or reducing the number of contexts generated (`n_context`) or final generations (`n_gen_decode`) in `generation_configs.py`. This may affect performance, however. The default parameters are the same as in the original work. The inference algorithm relies on random sampling, so the resulting generations will change even with the same parameters.
 
 ### Paraphrasing
 
