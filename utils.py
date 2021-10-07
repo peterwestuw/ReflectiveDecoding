@@ -82,6 +82,7 @@ def generate_batch(model, inp, top_p=0.8, temperature = 1., length=40, n=40, bat
 
         gen_batch = model.generate(inp,
                              do_sample = True,
+                             top_k=0, # disable default top_k=50
                              top_p=top_p, 
                              temperature=temperature, 
                              bad_words_ids=[[t] for t in disallowed_toks],
